@@ -12,7 +12,7 @@ register indexer => sub {
     my $conf = plugin_setting();
 
     my $indexer = Lucy::Simple->new(
-        index => $conf->{index},
+        path => $conf->{index},
         language => $conf->{polyanalyser}{language},
     );
 
@@ -22,7 +22,7 @@ register indexer => sub {
 register searcher => sub {
     my $conf = plugin_setting();
     my $searcher = Lucy::Simple->new(
-        index => $conf->{index},
+        path => $conf->{index},
     );
 
     return $searcher;
@@ -42,7 +42,7 @@ Dancer::Plugin::Lucy - Lucy interface for Dancer applications
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 
